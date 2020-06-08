@@ -1,0 +1,41 @@
+{
+  "name": "by-cli",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "bin": {
+    "zn": "bin/zn.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/skyxxxxx/by-cli.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/skyxxxxx/by-cli/issues"
+  },
+  "homepage": "https://github.com/skyxxxxx/by-cli#readme",
+  "dependencies": {
+    "chalk": "^4.0.0",
+    "commander": "^5.1.0",
+    "debug": "^4.1.1",
+    "execa": "^4.0.1",
+    "fs-extra": "^9.0.0",
+    "inquirer": "^7.1.0",
+    "leven": "^3.1.0",
+    "lodash.clonedeep": "^4.5.0",
+    "lru-cache": "^5.1.1",
+    "minimist": "^1.2.5",
+    "ora": "^4.0.4",
+    "read-pkg": "^5.2.0",
+    "semver": "^7.3.2",
+    "strip-ansi": "^6.0.0"
+  },
+  "engines": {
+    "node": ">=8"
+  }
+}
