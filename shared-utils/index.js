@@ -1,4 +1,4 @@
-;['logger', 'check', 'pkg', 'validate'].forEach((m) => {
+;['logger', 'check', 'pkg', 'validate', 'module'].forEach((m) => {
   Object.assign(exports, require(`./lib/${m}`))
 })
 
