@@ -9,39 +9,42 @@ function _log(type, tag, message) {
   events.emit('log', {
     message,
     type,
-    tag
+    tag,
   })
 }
 
 const format = (label, msg) => {
-  return msg.split('\n').map((line, i) => {
-    return i === 0 ? `${label} ${line}` : line.padStart(stripAnsi(label).length)
-  }).join('\n')
+  return msg
+    .split('\n')
+    .map((line, i) => {
+      return i === 0 ? `${label} ${line}` : line.padStart(stripAnsi(label).length)
+    })
+    .join('\n')
 }
 
-const chalkTag = msg => chalk.bgBlackBright.white.dim(` ${msg} `)
+const chalkTag = (msg) => chalk.bgBlackBright.white.dim(` ${msg} `)
 
-const log = (msg = '', tag = null) => {
+exports.log = (msg = '', tag = null) => {
   tag ? console.log(format(chalkTag(tag), msg)) : console.log(msg)
   _log('log', tag, msg)
 }
 
-const info = (msg, tag = null) => {
+exports.info = (msg, tag = null) => {
   console.log(format(chalk.bgBlue.black(' INFO ') + (tag ? chalkTag(tag) : ''), msg))
   _log('info', tag, msg)
 }
 
-const done = (msg, tag = null) => {
+exports.done = (msg, tag = null) => {
   console.log(format(chalk.bgGreen.black(' DONE ') + (tag ? chalkTag(tag) : ''), msg))
   _log('done', tag, msg)
 }
 
-const warn = (msg, tag = null) => {
+exports.warn = (msg, tag = null) => {
   console.warn(format(chalk.bgYellow.black(' WARN ') + (tag ? chalkTag(tag) : ''), chalk.yellow(msg)))
   _log('warn', tag, msg)
 }
 
-const error = (msg, tag = null) => {
+exports.error = (msg, tag = null) => {
   console.error(format(chalk.bgRed(' ERROR ') + (tag ? chalkTag(tag) : ''), chalk.red(msg)))
   _log('error', tag, msg)
   if (msg instanceof Error) {
@@ -50,7 +53,7 @@ const error = (msg, tag = null) => {
   }
 }
 
-const clearConsole = title => {
+exports.clearConsole = (title) => {
   if (process.stdout.isTTY) {
     const blank = '\n'.repeat(process.stdout.rows)
     console.log(blank)
@@ -60,14 +63,4 @@ const clearConsole = title => {
       console.log(title)
     }
   }
-}
-
-module.exports = {
-  events,
-  log,
-  info,
-  done,
-  warn,
-  error,
-  clearConsole
 }

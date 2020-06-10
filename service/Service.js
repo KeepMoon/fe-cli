@@ -1,0 +1,11 @@
+const fs = require('fs')
+const path = require('path')
+const debug = require('debug')
+const webpackMerge = require('webpack-merge')
+const webpackChain = require('webpack-chain')
+const dotenv = require('dotenv')
+const dotenvExpand = require('dotenv-expand')
+const defaultsDeep = require('lodash.defaultsdeep')
+const { chalk, warn, error, isPlugin, resolvePluginId, loadModule, resolvePkg } = require('../shared-utils')
+
+const { defaults, validate } = require('./options')

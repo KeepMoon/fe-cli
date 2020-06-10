@@ -1,1 +1,10 @@
-# by-cli
+# zn-cli
+
+## install
+
+
+
+## usage
+
+
+

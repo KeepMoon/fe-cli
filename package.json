@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "bin": {
-    "zn": "bin/zn.js"
+    "zn": "bin/create.js",
+    "zn-service": "bin/service.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -20,20 +21,26 @@
   },
   "homepage": "https://github.com/skyxxxxx/by-cli#readme",
   "dependencies": {
+    "@hapi/joi": "^17.1.1",
     "chalk": "^4.0.0",
     "commander": "^5.1.0",
     "debug": "^4.1.1",
+    "dotenv": "^8.2.0",
+    "dotenv-expand": "^5.1.0",
     "execa": "^4.0.1",
     "fs-extra": "^9.0.0",
     "inquirer": "^7.1.0",
     "leven": "^3.1.0",
     "lodash.clonedeep": "^4.5.0",
+    "lodash.defaultsdeep": "^4.6.1",
     "lru-cache": "^5.1.1",
     "minimist": "^1.2.5",
     "ora": "^4.0.4",
     "read-pkg": "^5.2.0",
     "semver": "^7.3.2",
-    "strip-ansi": "^6.0.0"
+    "strip-ansi": "^6.0.0",
+    "webpack-chain": "^6.4.0",
+    "webpack-merge": "^4.2.2"
   },
   "engines": {
     "node": ">=8"
